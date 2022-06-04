@@ -18,7 +18,8 @@ open class Animal(name: String, size: Int, open val diet: List<String>, open var
         return health
     }
 
-    fun eat(food: String) {                                                                                                     //if the animal eats its diet its health increases, if it eats something else it decreases
+    //if the animal eats its diet its health increases, if it eats something else it decreases
+    fun eat(food: String) {
         println("just had some $food")
         if (food in diet) {
             healthIncrease(10)
@@ -29,11 +30,13 @@ open class Animal(name: String, size: Int, open val diet: List<String>, open var
         }
     }
 
+    //The animal shouts its distinctive call
     fun shout() {
         println(call)
     }
 
-    fun sleep() {                                                                                                            //if the animal sleeps its health increases by 15
+    //if the animal sleeps its health increases by 15
+    fun sleep() {
         println("good night!")
         healthIncrease(15)
         println("My health just increased by 15, my new health is $health")
