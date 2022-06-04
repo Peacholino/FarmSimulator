@@ -12,28 +12,34 @@ open class Dog(override val sex: String, open var loyalty: Int): Animal("Dog", 7
         return loyalty
     }
 
-    fun loyaltyDecrease(factor: Int): Int {
-        loyalty -= factor
-        if (loyalty < 0) loyalty = 0
-        return loyalty
-    }
-
     fun pet() {
         loyaltyIncrease(5)
-        println("I have just been petted. That feels nice! My new loyalty is $loyalty")
+        if (loyalty < maxLoyalty) {
+            println("I have just been petted. My new loyalty is $loyalty")
+        } else {
+            println("I have just been petted. My loyalty, however, is already maxed out.")
+        }
     }
 
     fun play() {
         loyaltyIncrease(10)
-        println("I have just been played with. That was fun! My new loyalty is $loyalty")
+        if (loyalty < maxLoyalty) {
+            println("I have just been played with. My new loyalty is $loyalty")
+        } else {
+            println("I have just been played with. My loyalty, however, is already maxed out.")
+        }
     }
 
     //A dog can be trained to increase its loyalty, but only if its loyalty is already over 50.
     fun train () {
-        if (loyalty > 50) {
+        if (loyalty < 50) {
+            println("I cannot be trained jet as my loyalty is still too low. It needs to be at 50, it is now at $loyalty")
+        } else if (loyalty == maxLoyalty) {
+            println("I am already fully trained, my loyalty is maxed out.")
+        } else {
             loyaltyIncrease(20)
-            println("I have just been trained. My loyalty is now $loyalty")
-        } else println("I cannot be trained jet as my loyalty is still too low. It needs to be at 50, it is now at $loyalty")
+            println("I have just been trained. My loyalty increased by 20, my new loyalty is $loyalty")
+        }
     }
 
 }
