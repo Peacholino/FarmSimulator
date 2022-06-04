@@ -18,8 +18,8 @@ open class Animal(name: String, size: Int, open val diet: List<String>, open var
         return health
     }
 
-    //if the animal eats its diet its health increases, if it eats something else it decreases
-    fun eat(food: String) {
+    //if the animal is fed its diet its health increases, if it eats something else it decreases
+    fun feed(food: String) {
         println("just had some $food")
         if (food in diet) {
             healthIncrease(10)
