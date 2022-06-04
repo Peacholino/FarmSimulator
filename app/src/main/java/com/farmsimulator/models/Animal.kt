@@ -1,10 +1,8 @@
 package com.farmsimulator.models
 
 open class Animal(name: String, size: Int, open val diet: List<String>, open var call: String) {
-    open var age = 0
-    open var sex = "female"
-    open var health = 100
-    open val maxHealth = 100
+    open var health: Int = 100
+    open val maxHealth: Int = 100
 
     fun healthIncrease(factor: Int): Int {
         health += factor
@@ -42,3 +40,4 @@ open class Animal(name: String, size: Int, open val diet: List<String>, open var
         println("My health just increased by 15, my new health is $health")
     }
 }
+

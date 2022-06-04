@@ -1,6 +1,6 @@
 package com.farmsimulator.models
 
-class Cow() : Animal("Cow", 15, listOf("Hay", "Grass", "Carrots", "Corn"), "Moo!") {
+open class Cow(open val sex: String) : Animal("Cow", 15, listOf("Hay", "Grass", "Carrots", "Corn"), "Moo!") {
 
     fun milk() {
         if (sex == "female") {
@@ -13,4 +13,21 @@ class Cow() : Animal("Cow", 15, listOf("Hay", "Grass", "Carrots", "Corn"), "Moo!
     }
 /* female cows can be milked, which increases their health.
 Male cows cannot be milked and their health decreases if tried */
+
+    val cow1 = Cow("female")
+    val cow2 = Cow("male")
+    var cowBarn = listOf<String>()
+
+    fun breed(cow1: Cow, cow2: Cow) {
+        if(cow1.sex != cow2.sex && cow1.health >= 50 && cow2.health >= 50) {
+            println("breeding successful!")
+            cow1.healthDecrease(20)
+            cow2.healthDecrease(20)
+            println("The health of the parents decreased. $cow1 now has ${cow1.health} health, $cow2 now has ${cow2.health} health.")
+        } else if (cow1.sex == cow2.sex){
+            println("breeding unsuccessful! The cows are of the same sex.")
+        } else {
+            println("breeding unsuccessful!")
+        }
+    }
 }
