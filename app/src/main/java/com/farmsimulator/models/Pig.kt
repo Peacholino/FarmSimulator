@@ -1,4 +1,4 @@
 package com.farmsimulator.models
 
-class Pig : Animal("Pig", 6, listOf("Scraps", "Potatoes", "Pumpkins", "Corn"), "Oink, Oink!") {
+class Pig(override val sex: String) : Animal("Pig", 6, listOf("Scraps", "Potatoes", "Pumpkins", "Corn"), "Oink, Oink!") {
 }

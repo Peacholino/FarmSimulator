@@ -1,6 +1,6 @@
 package com.farmsimulator.models
 
-open class Dog(open var loyalty: Int): Animal("Dog", 7, listOf("Meat", "Kibble", "Carcass"), "Woof, Woof!") {
+open class Dog(override val sex: String, open var loyalty: Int): Animal("Dog", 7, listOf("Meat", "Kibble", "Carcass"), "Woof, Woof!") {
 
     // A dog can be played with, petted, and trained in order to increase its loyalty.
 
