@@ -43,13 +43,13 @@ open class Animal(name: String, size: Int, open val diet: List<String>, open var
 
     /* Animals can breed if the two parents are of the same sex and their health is above 50.
     If breeding was successful, the parents' health decreases by 20. */
-    fun breed(animal1: Animal, animal2: Animal) {
-        if(animal1.sex != animal2.sex && animal1.health >= 50 && animal2.health >= 50) {
+    fun breed(animal2: Animal) {
+        if(this.sex != animal2.sex && this.health >= 50 && animal2.health >= 50) {
             println("breeding successful!")
-            animal1.healthDecrease(20)
+            this.healthDecrease(20)
             animal2.healthDecrease(20)
-            println("The health of the parents decreased. $animal1 now has ${animal1.health} health, $animal2 now has ${animal2.health} health.")
-        } else if (animal1.sex == animal2.sex){
+            println("The health of the parents decreased. Parent No.1 now has ${this.health} health, parent No.2 now has ${animal2.health} health.")
+        } else if (this.sex == animal2.sex){
             println("breeding unsuccessful! The cows are of the same sex.")
         } else {
             println("breeding unsuccessful! Parents' health is too low.")
