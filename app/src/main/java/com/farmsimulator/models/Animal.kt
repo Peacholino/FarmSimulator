@@ -1,9 +1,10 @@
 package com.farmsimulator.models
 
-open class Animal(name: String, size: Int, open val diet: List<String>, open var call: String) {
+open class Animal(open val name: String, size: Int, open val diet: List<String>, open var call: String) : Farm() {
     open val sex: String = "female"
     open var health: Int = 100
     open val maxHealth: Int = 100
+    open var breedingSuccess: Boolean = false
 
     fun healthIncrease(factor: Int): Int {
         health += factor
@@ -49,10 +50,13 @@ open class Animal(name: String, size: Int, open val diet: List<String>, open var
             this.healthDecrease(20)
             animal2.healthDecrease(20)
             println("The health of the parents decreased. Parent No.1 now has ${this.health} health, parent No.2 now has ${animal2.health} health.")
+            breedingSuccess = true
         } else if (this.sex == animal2.sex){
             println("breeding unsuccessful! The cows are of the same sex.")
+            breedingSuccess = false
         } else {
             println("breeding unsuccessful! Parents' health is too low.")
+            breedingSuccess = false
         }
     }
 }

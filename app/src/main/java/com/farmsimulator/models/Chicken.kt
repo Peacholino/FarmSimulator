@@ -1,6 +1,9 @@
 package com.farmsimulator.models
 
-class Chicken(override val sex: String) : Animal("Chicken", 3, listOf("Seeds", "Corn", "Scraps", "Eggshells"), "Cluck, Cluck!") {
+import kotlin.random.Random
+
+class Chicken(override val sex: String) : Animal("Chicken", 1, listOf("Seeds", "Corn", "Scraps", "Eggshells"), "Cluck, Cluck!") {
+
     fun layEgg() {
         if (sex == "female") {
             println("I just laid an egg!")
@@ -9,3 +12,4 @@ class Chicken(override val sex: String) : Animal("Chicken", 3, listOf("Seeds", "
         }
     }
 }
+

@@ -2,7 +2,9 @@ package com.farmsimulator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.farmsimulator.models.Chicken
 import com.farmsimulator.models.Cow
+import com.farmsimulator.models.Dog
 import com.farmsimulator.models.Dragon
 
 class MainActivity : AppCompatActivity() {

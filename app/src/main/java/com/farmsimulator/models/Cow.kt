@@ -1,6 +1,6 @@
 package com.farmsimulator.models
 
-open class Cow(override val sex: String) : Animal("Cow", 15, listOf("Hay", "Grass", "Carrots", "Corn"), "Moo!") {
+open class Cow(override val sex: String) : Animal("Cow", 3, listOf("Hay", "Grass", "Carrots", "Corn"), "Moo!") {
 
     fun milk() {
         if (sex == "female") {
@@ -13,6 +13,4 @@ open class Cow(override val sex: String) : Animal("Cow", 15, listOf("Hay", "Gras
     }
 /* female cows can be milked, which increases their health.
 Male cows cannot be milked and their health decreases if tried */
-
-    var cowBarn = listOf<String>()
 }
