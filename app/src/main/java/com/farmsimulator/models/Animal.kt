@@ -1,6 +1,6 @@
 package com.farmsimulator.models
 
-open class Animal(open val name: String, size: Int, open val diet: List<String>, open var call: String) : Farm() {
+open class Animal(open val name: String, size: Int, open val diet: List<String>, open var call: String) {
     open val sex: String = "female"
     open var health: Int = 100
     open val maxHealth: Int = 100

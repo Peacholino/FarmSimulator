@@ -2,7 +2,7 @@ package com.farmsimulator.models
 
 import kotlin.random.Random
 
-class Chicken(override val sex: String) : Animal("Chicken", 1, listOf("Seeds", "Corn", "Scraps", "Eggshells"), "Cluck, Cluck!") {
+open class Chicken(override val sex: String) : Animal("Chicken", 1, listOf("Seeds", "Corn", "Scraps", "Eggshells"), "Cluck, Cluck!") {
 
     fun layEgg() {
         if (sex == "female") {
